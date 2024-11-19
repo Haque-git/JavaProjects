@@ -1,0 +1,160 @@
+public class Question_11{
+    public static void main(String[] arg){
+        int value = 12;
+        System.out.println(value);
+        int another_value = 15;
+        int sum = value + another_value;
+        int prod = value*another_value;
+        int div = value/another_value; 
+        System.out.println(sum);
+        System.out.println(prod);
+        System.out.println(div);
+        
+        double value_d = 20;
+        double sum_d = value_d + value;
+        double prod_d = value_d*value;
+        double div_d = value_d/value;
+        System.out.println(sum_d);
+        System.out.println(prod_d);
+        System.out.println(div_d);
+
+        String random_string = "This is a random string";
+        System.out.println(random_string);
+        System.out.println(random_string + value);
+        System.out.println(value + random_string);
+    }
+}
+
+
+
+public class Question_12 {
+    public static void main(String[] args) {
+        int radius = 4;
+        double area = Math.PI*Math.pow(radius, 2);
+        double circumference = 2*Math.PI*radius;
+        System.out.println("The area is " + area + " and the circumference is " + circumference);
+         
+    }
+    
+}
+
+
+
+public class Question_13 {
+    public static void main(String[] args) {
+        int random_4_digit_int = 1983;
+        int last_2_digit = random_4_digit_int%100;
+        System.out.println(last_2_digit);
+    }
+}
+
+
+
+public class Question_14 {
+    public static final double INCH_TO_METER_CONST = 0.0254;
+    public static void main(String[] args) {
+        double inch = 154;
+        double inch_to_meter = inch*INCH_TO_METER_CONST;
+        System.out.println(inch + " inch(s) is = " + inch_to_meter + " meter");
+
+    }
+}
+
+
+
+public class Question_15 {
+    public static void main(String[] args) {
+        int value_1 = 12;
+        int value_2 = 15;
+        
+        // using temporary variable
+
+        System.out.println("Before swaping value_1 = " + value_1 + " and value_2 = " + value_2);
+
+        int temp = value_1;
+        value_1 = value_2;
+        value_2 = temp;
+        
+        System.out.println("After swaping value_1 = " + value_1 + " and value_2 = " + value_2);
+
+        // without using temporary variable
+
+        System.out.println("Before swaping value_1 = " + value_1 + " and value_2 = " + value_2);
+
+        value_1 += value_2;
+        value_2 = value_1 - value_2;
+        value_1 -= value_2;
+
+        System.out.println("After swaping value_1 = " + value_1 + " and value_2 = " + value_2);
+
+
+
+    }
+}
+
+
+
+public class Question_16 {
+    public static final int YEAR_TO_MINTES_CONST = 365*24*60;
+    public static final int DAY_TO_MINUTE_CONST = 24*60;
+
+    public static void main(String[] args) {
+        int minute = 3456789;
+        int year = minute/YEAR_TO_MINTES_CONST;
+        int day = (minute%(year*YEAR_TO_MINTES_CONST))/DAY_TO_MINUTE_CONST;
+        System.out.println(minute + " minutes are equals to " + year + " year(s) " + day + " day(s)");
+    }
+}
+
+
+
+public class Question_17 {
+    public static void main(String[] args) {
+        int a = 2;
+        int b = 5;
+        int c = 8;
+        int d = (2*b*(c-a)/3) + 7;
+        System.out.println(d);
+    }
+}
+
+
+
+public class Question_18 {
+    public static void main(String[] args) {
+        int id = 24201305;
+        int right_most_2_digits = (id - (id%1000000))/1000000;
+        int second_last_digit = right_most_2_digits%10;
+        int last_digit = (right_most_2_digits - second_last_digit)/10;
+        int ans = second_last_digit*10 + last_digit;
+        
+        System.out.println(ans);
+    }
+}
+
+
+
+public class Question_19 {
+    public static void main(String[] args) {
+        double area = 8*3 + 8*Math.sqrt(4*4 + 3*3);
+        double circ = Math.sqrt(4*4 + 3*3)*6;
+
+        System.out.println("The area is " + area + " and the circumference is " + circ);
+    }
+}
+
+
+
+public class Question_20 {
+    public static void main(String[] args) {
+        double a = 4.5;
+        double b = 9.5;
+        double c = Math.sqrt(a*a + b*b);
+        double sinA = a/c;
+        double cosA = b/c;
+        double sinB = cosA;
+        double cosB = sinA;
+
+        System.out.println("sin(A) = " + sinA + ", cos(A) = " + cosA + ", sin(B) = " + sinB + ", cos(B) = " + cosB);
+    }
+}
