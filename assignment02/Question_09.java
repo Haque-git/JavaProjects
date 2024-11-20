@@ -1,8 +1,8 @@
-package Assigment_02;
+package assignment02;
 
 public class Question_09 {
     public static void main(String[] args) {
-        double value_1 = 12.3, value_2 = -23.2, value_3 = 14.78, largest_num = 0, smallest_num = 0;
+        double value_1 = 12.3, value_2 = -23.2, value_3 = 14.78, largest_num, smallest_num;
         String out_max = "Maximum number is ", out_min = "Minimum number is ";
         if (value_1>value_2 && value_1>value_3) {
             largest_num = value_1;

@@ -1,0 +1,408 @@
+package assignment02;
+
+public class Question_01 {
+    public static void main(String[] args) {
+        int value_01 = 100, value_02 = 101, value_03 = 110;
+        int largest_value;
+        if (value_01 > value_02 && value_01>value_03) {
+            largest_value = value_01;
+        }
+        else if (value_02>value_01 && value_02>value_03) {
+            largest_value = value_02;
+        }
+        else {
+            largest_value = value_03;
+        }
+
+        System.out.println("largest number: " + largest_value);
+    }
+}
+
+
+package assignment02;
+
+public class Question_02 {
+    public static void main(String[] args) {
+        int score = 91;
+        String grade = "";
+        if (score<=100 && score>=90) {
+            grade = "A";
+        }
+        else if (score<=98 && score>=85) {
+            grade = "A-";
+        }
+        else if (score<=84 && score>=70) {
+            grade = "B";
+        }
+        else if (score<=69 && score>=57) {
+            grade = "C";
+        }
+        else if (score<=56 && score>=50) {
+            grade = "D";
+        }
+        else if (score<=50 && score>=0) {
+            grade = "F";
+        }
+        System.out.println("Your grade is " + grade);
+    }
+}
+
+
+package assignment02;
+
+public class Question_03 {
+    public static void main(String[] args) {
+        int divident = 183;
+        boolean is_divisible_by_5 = false;
+        boolean is_divisible_by_7 = false;
+        String output = "No";
+        
+        if (divident%5 == 0) {
+            is_divisible_by_5 = true;
+        }
+        if (divident%7 == 0) {
+            is_divisible_by_7 = true;
+        }
+
+        if (is_divisible_by_5 && is_divisible_by_7) {
+            output = "Divisible by Both";
+        }
+        else if (is_divisible_by_5) {
+            output = "Invalid: Divisible by 5 Only";
+        }
+        else if (is_divisible_by_7) {
+            output = "Invalid: Divisible by 7 Only";
+        }
+
+        System.out.println(output);
+        
+    }
+}
+
+
+package assignment02;
+
+public class Question_04 {
+    public static void main(String[] args) {
+        int year = 2521;
+        boolean is_divisible_by_4 = false, is_divisible_by_100 = false, is_divisible_by_400 = false;
+        String output = year + " is not a leap year";
+
+        if (year%4 == 0) {
+            is_divisible_by_4 = true;
+        }
+        if (year%100 == 0) {
+            is_divisible_by_100 = true;
+        }
+        if (year%400 == 0) {
+            is_divisible_by_400 = true;
+        }
+
+        if (is_divisible_by_4) {
+            if (!is_divisible_by_100) {
+                output = year + " is a leap year";
+            }
+            else if (is_divisible_by_100 && is_divisible_by_400) {
+                output = year + " is a leap year";
+            }
+        }
+
+        System.out.println(output);
+    }
+}
+
+
+package assignment02;
+
+public class Question_05 {
+    public static void main(String[] args) {
+        int value = 13;
+        boolean is_negative = false, is_positive = false, is_even = false;
+        String output = "Number is ";
+
+        if (value > 0) {
+            is_positive = true;
+            if (value%2 == 0) {
+                is_even = true;
+            }
+        }
+        if (value < 0) {
+            is_negative = true;
+        }
+
+        if (is_positive) {
+            output += "positve ";
+            if (is_even) {
+                output += "and even";
+            }
+            else {
+                output += "and odd";
+            }
+        }
+        else if (is_negative) {
+            output += "negative";
+        }
+        else {
+            output += "zero";
+        }
+
+        System.out.println(output);
+        
+    }
+}
+
+
+package assignment02;
+
+public class Question_06 {
+    public static void main(String[] args) {
+        int x = 10;
+        if (x < 0) {
+            x *= 2;
+        }
+        else if (x>=0 && x<2) {
+            x++;
+        }
+        else if (x>=2 && x<5) {
+            x = x*x - 1;
+        }
+        else {
+            x = 3*x*x + 2;
+        }
+        System.out.println("output: " + x);
+    }
+}
+
+
+package assignment02;
+
+public class Question_07 {
+    public static void main(String[] args) {
+        int id = 24201305, year = 0, session = 0;
+        String output = "Student Joined BRAC in ", str_session ="";
+
+        year = id/1000000;
+        session = (id/100000)%10;
+        if (session == 1) {
+            str_session = "Spring ";
+        }
+        else if (session == 3) {
+            str_session = "Summer ";
+        }
+        else if (session == 2) {
+            str_session = "Fall ";
+        }
+        
+        output += (str_session + year);
+        System.out.println(output);
+    }
+}
+
+
+package assignment02;
+
+public class Question_08 {
+    public static void main(String[] args) {
+        boolean is_adult = false;
+        int age = 24, payment = 120000, tax = 0;
+        String output = "Your tax amount is ";
+        if (age > 18) {
+            is_adult = true;
+        }
+
+        if (is_adult) {
+            if (payment>=10000 && payment<=20000) {
+                tax += (payment*5)/100;
+            }
+            else if (payment > 20000) {
+                tax += (payment*10)/100;
+            }
+        }
+
+        output+= (tax + " TK");
+
+        System.out.println(output);
+
+    }
+}
+
+
+package assignment02;
+
+public class Question_09 {
+    public static void main(String[] args) {
+        double value_1 = 12.3, value_2 = -23.2, value_3 = 14.78, largest_num, smallest_num;
+        String out_max = "Maximum number is ", out_min = "Minimum number is ";
+        if (value_1>value_2 && value_1>value_3) {
+            largest_num = value_1;
+        }
+        else if (value_2>value_1 && value_2>value_3) {
+            largest_num = value_2;
+        }
+        else {
+            largest_num = value_3;
+        }
+
+        out_max += largest_num;
+
+        if (value_1<value_2 && value_1<value_3) {
+            smallest_num = value_1;
+        }
+        else if (value_2<value_1 && value_2<value_3) {
+            smallest_num = value_2;
+        }
+        else {
+            smallest_num = value_3;
+        }
+
+        out_min += smallest_num;
+
+        System.out.println(out_max + "\n" + out_min);
+    }
+}
+
+
+package assignment02;
+
+public class Question_10 {
+    public static void main(String[] args) {
+        int side_1 = 3, side_2 = 4, side_3 = 5;
+        String output = "This is a ";
+        if (side_1==side_2 && side_2== side_3) {
+            output += "Equilateral triangle";
+        }
+        else if (side_1==side_2 || side_2==side_3 || side_3==side_1) {
+            output += "Isosceles triangle";
+        }
+        else {
+            output += "Scalene triangle";
+        }
+
+        System.out.println(output);
+    }
+}
+
+
+package assignment02;
+
+public class Question_11 {
+    public static void main(String[] args) {
+        int cost = 30, paid = 520, due;
+        int hundred = 0, fifty = 0, twenty = 0, ten = 0, five = 0, two = 0, one = 0;
+        int returning_ammount = paid - cost;
+        if (paid < cost) {
+            due = cost - paid;
+            System.out.println("Please pay " + due + " taka more.");
+        }
+        else if (paid == cost) {
+            System.out.println("The return ammount is 0 taka.");
+        }
+        else {
+            due = paid - cost;
+            if (returning_ammount >= 100) {
+                hundred = returning_ammount/100;
+                returning_ammount %= 100;
+            }
+            if (returning_ammount >= 50) {
+                fifty = returning_ammount/50;
+                returning_ammount %= 50;
+            }
+            if (returning_ammount >= 20) {
+                twenty = returning_ammount/20;
+                returning_ammount %= 20;
+            }
+            if (returning_ammount >= 10) {
+                ten = returning_ammount/10;
+                returning_ammount %= 10;
+            }
+            if (returning_ammount >= 5) {
+                five = returning_ammount/5;
+                returning_ammount %= 5;
+            }
+            if (returning_ammount >= 2) {
+                two = returning_ammount/2;
+                returning_ammount %= 2;
+            }
+            if (returning_ammount > 0) {
+                one = returning_ammount;
+            }
+            System.out.println("The return amount is " + due + " taka");
+            System.out.println("100 taka note: " + hundred);
+            System.out.println("50 taka note: " + fifty);
+            System.out.println("20 taka note: " + twenty);
+            System.out.println("10 taka note: " + ten);
+            System.out.println("5 taka coin: " + five);
+            System.out.println("2 taka coin: " + two);
+            System.out.println("1 taka coin: " + one);
+            
+        }
+
+
+    }
+}
+
+package assignment02;
+
+public class Question_12 {
+    public static void main(String[] args) {
+        int value_1 = 3, value_2 = 4, value_3 = 5;
+        String output = "";
+        if (value_1==value_2 && value_2== value_3) {
+            output += "All numbers are equal";
+        }
+        else if (value_1==value_2 || value_2==value_3 || value_3==value_1) {
+            output += "Neither all are equal or different";
+        }
+        else {
+            output += "All numbers are different";
+        }
+
+        System.out.println(output);
+    }
+}
+
+
+package assignment02;
+
+public class Question_13 {
+    public static void main(String[] args) {
+        for (int i = 24; i > -7; i -= 6) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+package assignment02;
+
+public class Question_14 {
+    public static void main(String[] args) {
+        int start = -10;
+        int end = 20;
+        int step = 5;
+
+        for (int i = start; i <= end; i += step) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+package assignment02;
+
+public class Question_15 {
+    public static void main(String[] args) {
+        int start = 1;
+        int end = 100;
+        int sum = 0;
+        double average;
+        for (int i = start; i <= end; i++) {
+            sum += i;
+        }
+        average = sum / (end - start + 1);
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + average);
+    }
+}
+
+

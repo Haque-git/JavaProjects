@@ -1,6 +1,6 @@
-package Assigment_02;
+package assignment02;
 
-public class question_08 {
+public class Question_08 {
     public static void main(String[] args) {
         boolean is_adult = false;
         int age = 24, payment = 120000, tax = 0;

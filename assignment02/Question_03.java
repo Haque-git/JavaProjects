@@ -1,4 +1,4 @@
-package Assigment_02;
+package assignment02;
 
 public class Question_03 {
     public static void main(String[] args) {
@@ -22,9 +22,6 @@ public class Question_03 {
         }
         else if (is_divisible_by_7) {
             output = "Invalid: Divisible by 7 Only";
-        }
-        else {
-            output = "No";
         }
 
         System.out.println(output);

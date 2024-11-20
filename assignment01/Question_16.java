@@ -1,3 +1,4 @@
+package assignment01;
 public class Question_16 {
     public static final int YEAR_TO_MINTES_CONST = 365*24*60;
     public static final int DAY_TO_MINUTE_CONST = 24*60;
