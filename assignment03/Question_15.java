@@ -2,7 +2,7 @@ package assignment03;
 
 public class Question_15 {
     public static void main(String[] args) {
-        int number = 6, sum = 0;
+        int number = 7, sum = 0;
         for (int i = 1; i < number; i++) {
             if (number % i == 0) {
                 sum += i;
@@ -10,10 +10,10 @@ public class Question_15 {
         }
         
         if (sum == number) {
-            System.out.println(number + " is perfect number.");
+            System.out.println(number + " is perfect number");
         }
         else {
-            System.out.println(number + " is not perfect number.");
+            System.out.println(number + " is not perfect number");
         }
     }
 }

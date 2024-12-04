@@ -1,0 +1,259 @@
+package assignment03;
+
+public class Question_01 {
+    public static void main(String[] args) {
+        for (int i = 18; i <= 63; i += 9) {
+            System.out.print(i);
+            if (i != 63) {
+                System.out.print(", ");    
+            }
+
+        }
+    }
+}
+
+
+package assignment03;
+
+public class Question_02 {
+    public static void main(String[] args) {
+        for (int i = 18; i <= 63; i += 9) {
+            if (i%2 != 0) {
+                System.out.print(i*(-1));    
+            }
+            else {
+                System.out.print(i);    
+            }
+            if (i != 63) {
+                System.out.print(", ");    
+            }
+
+        }
+    }
+}
+
+
+package assignment03;
+
+public class Question_03 {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 600; i++) {
+            if ((i%7 == 0) && (i%9 == 0))
+                sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+
+
+package assignment03;
+
+public class Question_04 {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 600; i++) {
+            if ((i%7 == 0) || (i%9 == 0))
+                sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+
+
+package assignment03;
+
+public class Question_05 {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 600; i++) {
+            if ((i%7 == 0) && (i%9 != 0) || (i%7 != 0) && (i%9 == 0))
+                sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+
+
+package assignment03;
+
+public class Question_06 {
+    public static void main(String[] args) {
+        int output = 0, input = 5;
+        for (int i = 1; i <= input; i++) {
+            if (i%2 == 0) {
+                output -= i*i;
+            } else {
+                output += i*i;
+            }
+
+        }
+        System.out.println(output);
+    }
+}
+
+
+package assignment03;
+
+public class Question_07 {
+    public static void main(String[] args) {
+        int divident = 6, divisor_count = 0;
+        System.out.println("Divisors of " + divident + ": ");
+        for (int i = 1; i <= divident; i++) {
+            if (divident%i == 0) {
+                System.out.println(i);
+                divisor_count++;
+            }
+        }
+        System.out.println("Total Divisors: " + divisor_count);
+        
+    }
+    
+}
+
+
+package assignment03;
+
+public class Question_08 {
+    public static void main(String[] args) {
+        int term = 10, odd_multiples = 1, sum = 0;
+        System.out.println("The odd numbers are:  ");
+        for (int i = 1; i <= term; i++) {
+            System.out.println(odd_multiples);
+            sum += odd_multiples;
+            odd_multiples += 2;
+        }
+        System.out.println("The Sum of odd Natural Numbers up to " + term + " terms is: " + sum);
+
+    }
+}
+
+
+package assignment03;
+
+public class Question_09 {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 10; i++) {
+            sum += i;
+            System.out.println("Current Number: " + i + ", Sum: " + sum);
+        }
+    }
+}
+
+
+package assignment03;
+
+public class Question_10 {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 40; i++) {
+            if ((i%5 == 0) && (i%3 != 0))
+                System.out.println(i);
+        }
+    }
+}
+
+
+package assignment03;
+
+public class Question_11 {
+    public static void main(String[] args) {
+        int number = 1673125, digit_count = 0;
+        while (number > 0) {
+            number /= 10;
+            digit_count++;
+        }
+        System.out.println("Total digits = " + digit_count);
+    }
+}
+
+
+package assignment03;
+
+public class Question_12 {
+    public static void main(String[] args) {
+        int number = 1673125;
+        while (number > 0) {
+            if (number/10 == 0) {
+                System.out.print((number % 10));    
+            }
+            else {
+                System.out.print((number % 10) + ", ");
+            }
+            number /= 10;
+        }
+    }
+}
+
+
+package assignment03;
+
+public class Question_13 {
+    public static void main(String[] args) {
+        int number = 1673125, initial_number = number;
+        int digit_count = 0;
+        while (initial_number > 0) {
+            initial_number /= 10;
+            digit_count++;
+        }
+
+        int exp = 1;
+        for (int i = 1; i < digit_count; i++) {
+            exp *=10;
+        }
+
+        while (number > 0) {
+            if (number/10 == 0) {
+                System.out.println((number/exp));                
+            }
+            else {
+                System.out.print((number/exp) + ", ");                
+            }
+            number %= exp;
+            exp /= 10;
+        }
+    }
+}
+
+
+package assignment03;
+public class Question_14 {
+    public static void main(String[] args) {
+        int random_int = 7;
+        int count = 0;
+        for (int i = 1; i <= random_int; i++) {
+            if (random_int%i == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+            System.out.println(random_int + " is prime number");
+        }
+        else {
+            System.out.println(random_int + " is not prime number");
+        }
+    }
+}
+
+
+package assignment03;
+
+public class Question_15 {
+    public static void main(String[] args) {
+        int number = 7, sum = 0;
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                sum += i;
+            }
+        }
+        
+        if (sum == number) {
+            System.out.println(number + " is perfect number");
+        }
+        else {
+            System.out.println(number + " is not perfect number");
+        }
+    }
+}
+
+
