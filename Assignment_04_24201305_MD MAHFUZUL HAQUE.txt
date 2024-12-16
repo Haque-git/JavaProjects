@@ -1,0 +1,320 @@
+package assignment04;
+
+import java.util.Scanner;
+
+public class Question_01 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int max, min, avg, count, number_couunt, number;
+        max = min = avg = count = 0;
+
+        System.out.print("How many numbers do you want to enter?\n_");        
+        number_couunt = sc.nextInt();
+
+        for (int i = 0; i < number_couunt; i++) {
+            System.out.print("Enter number: ");
+            number = sc.nextInt();
+            if (i == 0) {
+                max = min = number;
+            } else {
+                if (number > max) {
+                    max = number;
+                }
+
+                if (number < min) {
+                    min = number;
+                }
+
+                if (number > 0 && number%2 == 0) {
+                    avg += number;
+                    count++;
+                }
+
+                if ((i-1) == number) {
+                    avg /= count;
+                }
+            }
+        }
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
+        System.out.println("Average: " + avg);
+        sc.close();
+    }
+}
+
+
+package assignment04;
+
+import java.util.Scanner;
+
+public class Question_02 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num;
+        while (true) {
+            System.out.print("Enter number: ");
+            num = sc.nextInt();
+            if (num < 0) {
+                break;
+            }
+            System.out.println(num + " ^ 2: " + (int)Math.pow(num, 2));
+        }
+        sc.close();
+    }
+}
+
+
+package assignment04;
+
+import java.util.Scanner;
+
+public class Question_03 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int count = sc.nextInt();
+        int number;
+        int non_negative_number, negative_number;
+        non_negative_number = negative_number = 0;
+
+        for (int i = 0; i < count; i++) {
+            System.out.print("Enter number " + (i+1) + ": ");
+            number = sc.nextInt();
+            if (number < 0) {
+                negative_number++;
+            } else {
+                non_negative_number++;
+            }
+
+        }
+
+        System.out.println(non_negative_number + " Non_negative Numbers");
+        System.out.println(negative_number + " Negative Numbers");
+        sc.close();
+    }
+}
+
+
+package assignment04;
+
+import java.util.Scanner;
+
+public class Question_04 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("How many prime numbers you wanna find out?\n_");
+        int prime_count = sc.nextInt();
+        boolean is_prime;
+        int prime_found = 0;
+
+        for (int i = 2; prime_found != prime_count; i++) {
+            is_prime = true;
+            for (int j = 2; j < i; j++) {
+                if (i%j == 0) {
+                    is_prime = false;
+                    break;
+                }
+            }
+
+            if (is_prime) {
+                System.out.println(i);
+                prime_found++;
+            }
+
+        }
+        sc.close();
+
+    }
+}
+
+
+package assignment04;
+
+import java.util.Scanner;
+
+public class Question_05 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("The value of N: ");
+        int N = sc.nextInt();
+        int sum = 0;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < (i+1); j++) {
+                sum -= (j+1);
+            }
+        }
+
+        System.out.println("The value of y: " + sum);
+        sc.close();
+    }
+}
+
+
+package assignment04;
+
+import java.util.Scanner;
+
+public class Question_06 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number, divisor_count = 0;
+        while (true) {
+            System.out.print("Enter Number: ");
+            number = sc.nextInt();
+            if (number < 1) {
+                System.out.println("Please enter positive number");
+                continue;
+            } else if (number%2 == 1) {
+                break;
+            }
+            for (int i = 1; i <= number; i++) {
+                if (number%i == 0) {
+                    divisor_count++;
+                }
+            }
+            System.out.println(number + " has " + divisor_count + " divisors");
+            divisor_count = 0;   
+            
+        }
+        sc.close();
+
+    }
+}
+
+
+package assignment04;
+
+import java.util.Scanner;
+
+public class Question_07 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int X, Y;
+        for (int i = 0; i < N; i++) {
+            X = sc.nextInt();
+            Y = sc.nextInt();
+            for (int j = 0; j < Y; j++) {
+                if (X%2 == 0) {
+                    X += 1;
+                }
+                X += 2;
+                System.out.println(X);
+            }
+            System.out.println(X);
+        }
+        sc.close();
+
+    }
+}
+
+
+package assignment04;
+import java.util.Scanner;
+
+public class Question_08 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter row: ");
+        int row = sc.nextInt();
+        System.out.print("enter collumn: ");
+        int collumn = sc.nextInt();
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < collumn; j++) {
+                System.out.print(j+1);
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+
+package assignment04;
+import java.util.Scanner;
+
+public class Question_09 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter side lenght: ");
+        int side_lenght = sc.nextInt();
+
+        for (int i = 1; i <= side_lenght; i++) {
+            for (int j = 1; j <= (side_lenght - i); j++) {
+                System.out.print("*");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+                
+            }
+
+            System.out.println();
+        }
+        sc.close();
+
+    }
+}
+
+
+package assignment04;
+import java.util.Scanner;
+
+public class Question_10 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter height: ");
+        int height = sc.nextInt();
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < (height-i); j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < ((2*i) -1); j++) {
+                System.out.print(j+1);
+            }
+            System.out.println();
+        }        
+        sc.close();
+    }
+}
+
+
+package assignment04;
+import java.util.Scanner;
+
+public class Question_11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Start: ");
+        int start = sc.nextInt();
+        System.out.print("End: ");
+        int end = sc.nextInt();
+        System.out.println();
+
+        int digit_count = 0, sum = 0, temp_1, temp_2;
+
+        System.out.println("Armstrong numbers: ");
+        for (int i = start; i <= end; i++) {
+            temp_1 = temp_2 = i;
+
+            while (temp_1 != 0) {
+                digit_count++;
+                temp_1 /= 10;
+            }
+
+            while (temp_2 != 0) {
+                sum += (int)Math.pow(temp_2%10, digit_count);
+                temp_2 /= 10;
+            }
+
+            if (sum == i) {
+                System.out.println(i);
+            }
+            digit_count = sum = 0;
+        }
+
+        sc.close();
+
+    }
+}
+
+
