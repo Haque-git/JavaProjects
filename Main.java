@@ -1,23 +1,33 @@
-import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        Scanner nigga = new Scanner(System.in);
-        String str = nigga.nextLine();
-        
-        /*
-        1. A
-        2. p
-        3. p
-        4. L
-        .
-        .
-        */
-
-        for(int i = 1; i <= str.length(); i++) {
-            
+        int x = 0, y = 0;
+        System.out.println("x = " + x + ", y = " + y);
+        String sum = "0";
+        System.out.println("sum = " + sum);
+        double p;
+        while (x < 9) {
+            y = x / 2;
+            System.out.println("y = " + y);
+            while (y < x) {
+                p = (x + 5.0) / 2;
+                System.out.println("p = " + p);
+                sum = (sum + 2) + x + "y * 2" + (int) p;
+                System.out.println("sum = " + sum);
+                System.out.println(sum);
+                y = y + 1;
+                System.out.println("y = " + y);
+            }
+            x = x + 2;
+            System.out.println("x = " + x);
+            if (x > 5) {
+                sum = "2";
+                System.out.println("sum = " + sum);
+            } else {
+                sum += "3";
+                System.out.println("sum = " + sum);
+            }
         }
-        System.out.print("1" + "1");    
     }
-}
 
+}
