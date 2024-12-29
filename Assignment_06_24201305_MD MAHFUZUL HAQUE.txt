@@ -1,0 +1,447 @@
+package assignment06;
+
+import java.util.Scanner;
+
+public class Question_01 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("N = ");
+        int user_input = sc.nextInt();
+        int[] arr = new int[user_input];
+        int[] resized_arr = new int[user_input + 1];
+        
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter a number: ");
+            arr[i] = sc.nextInt();
+        }
+        
+        for (int i = 0; i < resized_arr.length; i++) {
+            if (i != resized_arr.length-1) {
+                resized_arr[i] = arr[i];
+            } else {
+                System.out.print("Enter another number: ");
+                resized_arr[i] = sc.nextInt();
+            }
+        }
+
+        System.out.println("The element of the array are: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(i + ": " + arr[i]);
+        }
+
+        System.out.println("After resizing the array: ");
+        for (int i = 0; i < resized_arr.length; i++) {
+            System.out.print(resized_arr[i] + " ");
+        }
+
+        sc.close();
+
+
+    }
+}
+
+
+package assignment06;
+
+public class Question_02 {
+    public static void main(String[] args) {
+        int[] arr = {9, -5, 7, 9, -5, 5, 7};
+
+        System.out.println("Before removing duplicates: ");
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    arr[i] = 0;
+                    break;
+                }
+            }
+        }
+
+        System.out.println("\nAfter removing duplicates: ");
+        
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+
+package assignment06;
+
+import java.util.Scanner;
+
+public class Question_03 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("N = ");
+        int user_input = sc.nextInt();
+        int[] arr = new int[user_input];
+        
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter a number: ");
+            arr[i] = sc.nextInt();
+        }
+        int[] reversed_arr = new int[user_input];
+
+        for (int i = reversed_arr.length - 1; i >= 0; i--) {
+            reversed_arr[i] = arr[reversed_arr.length - i - 1];
+        }
+
+
+
+        System.out.println("Reversed using a new array: ");
+        for (int i = 0; i < reversed_arr.length; i++) {
+            System.out.print(reversed_arr[i] + " ");
+
+        }
+
+        for (int i = 0; i < arr.length/2; i++) {
+            arr[i] = arr[i]^arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = arr[i]^arr[arr.length - i - 1];
+            arr[i] = arr[i]^arr[arr.length - i - 1];
+        }
+
+        System.out.println("\nReversed the original array: ");
+        for (int i = 0; i < reversed_arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+        sc.close();
+    }
+}
+
+
+package assignment06;
+
+import java.util.Scanner;
+
+public class Question_04 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("N = ");
+        int user_input = sc.nextInt();
+        int[] arr = new int[user_input];
+        
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("Original array: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                arr[i] = 1;
+            } else {
+                arr[i] = 0;
+            }    
+        }
+        
+        System.out.println("\nAfter modifying: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        sc.close();
+
+    }
+}
+
+
+package assignment06;
+
+import java.util.Scanner;
+
+public class Question_05 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("N = ");
+        int user_input = sc.nextInt();
+        int[] arr = new int[user_input];
+        
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter a number: ");
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter a number: ");
+        int value = sc.nextInt();
+        int index = 0;
+        boolean is_found = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == value) {
+                is_found = true;
+                index = i;
+                break;
+            }
+        }
+
+        if (is_found) {
+            System.out.println(value + " is at index " + index);
+        } else {
+            System.out.println("Element not found");
+        }
+        sc.close();
+
+    }
+}
+
+
+package assignment06;
+
+import java.util.Scanner;
+
+public class Question_06 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("N = ");
+        int user_input = sc.nextInt();
+        double[] arr = new double[user_input];
+        
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter a number: ");
+            arr[i] = sc.nextDouble();
+        }
+
+        double max = Double.NEGATIVE_INFINITY;
+        double min = Double.POSITIVE_INFINITY;
+        double sum = 0;
+        double average = 0;
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+
+            sum += arr[i];
+        }
+
+        
+        int index_of_max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == max) {
+                index_of_max = i;
+                break;
+            }
+        }
+        
+        int index_of_min = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == min) {
+                index_of_min = i;
+                break;
+            }
+        }
+        
+        
+        System.out.println("Maximum element " + max + " found at index " + index_of_max);
+        System.out.println("Minimum element " + min + " found at index " + index_of_min);
+        System.out.println("Summation: " + sum);
+        average = sum / arr.length;
+        System.out.println("Average: " + average);
+
+
+        sc.close();
+    }
+}
+
+
+package assignment06;
+
+public class Question_07 {
+    public static void main(String[] args) {
+        int[] arr = {23,100,23,56,100};
+        int length_of_new_array = 0;
+        
+        
+        for (int i = 0; i < arr.length; i++) {
+            boolean is_unique = true;
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    is_unique = false;
+                    break;
+                }
+
+            }    
+            if (is_unique) {
+                length_of_new_array++;
+            }
+        }
+        
+        
+        int[] new_arr = new int[length_of_new_array];
+        
+        int index = 0;
+        for (int i = 0; i < arr.length; i++) {
+            boolean is_unique = true;
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    is_unique = false;
+                    break;
+                }
+
+            }    
+            if (is_unique) {
+                new_arr[index] = arr[i];
+                index++;
+            }
+        }
+
+        for (int i = 0; i < new_arr.length; i++) {
+            System.out.print(new_arr[i] + " ");
+        }
+    }
+}
+
+
+package assignment06;
+
+import java.util.Scanner;
+
+public class Question_08 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter the length of the array 1: ");
+        int length_of_arr_01 = sc.nextInt();
+        int[] arr_01 = new int[length_of_arr_01];
+        
+        System.out.println("Please enter the elements of the array 1: ");
+        for (int i = 0; i < arr_01.length; i++) {
+            arr_01[i] = sc.nextInt();
+        }
+        
+        
+        System.out.print("Please enter the length of the array 2: ");
+        int length_of_arr_02 = sc.nextInt();
+        int[] arr_02 = new int[length_of_arr_02];
+        
+        System.out.println("Please enter the elements of the array 2: ");
+        for (int i = 0; i < arr_02.length; i++) {
+            arr_02[i] = sc.nextInt();
+        }
+
+        
+        boolean is_subset = true;
+        for (int i = 0; i < arr_02.length; i++) {
+            boolean is_found = false;
+            for (int j = 0; j < arr_01.length; j++) {
+                if (arr_02[i] == arr_01[j]) {
+                    is_found = true;
+                    break;
+                }
+            }
+            if (!is_found) {
+                is_subset = false;
+                break;
+            }
+        }
+
+        if (is_subset) {
+            System.out.println("Array 2 is a subset of the array 1.");
+        } else {
+            System.out.println("Array 2 is not a subset of the array 1.");
+        }
+
+        sc.close();
+
+    }
+}
+
+
+package assignment06;
+
+import java.util.Scanner;
+
+public class Question_09 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("N = ");
+        int user_input = sc.nextInt();
+        int[] arr = new int[user_input];
+        
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter a number: ");
+            arr[i] = sc.nextInt();
+        }
+
+        
+        System.out.println("Original Array: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        
+        for (int i = 0; i < arr.length; i++) {
+            int current = arr[i];
+            int max = arr[i];
+            int index = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > max) {
+                    max = arr[j];
+                    index = j;
+                }
+            }
+
+            arr[i] = max;
+            arr[index] = current;
+        }
+
+
+        System.out.println("Sorted Array: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+
+package assignment06;
+
+public class Question_10 {
+    public static void main(String[] args) {
+        int [] marks = {85, 90, 75, 44, 99};
+        String [] names = {"Bob", "Alice", "Max", "Marry", "Rosy"};
+        
+
+        for (int i = 0; i < marks.length; i++) {
+            for (int j = 0; j < marks.length - i - 1; j++) {
+                if (marks[j] > marks[j + 1]) {
+                    marks[j] ^= marks[j + 1];
+                    marks[j + 1] ^= marks[j];
+                    marks[j] ^= marks[j + 1];
+
+                    String temp = names[j];
+                    names[j] = names[j + 1];
+                    names[j + 1] = temp;
+                }
+            }
+        }
+        
+
+        System.out.println("Sorted Array: ");
+        for (int i = 0; i < marks.length; i++) {
+            System.out.print(marks[i] + " ");
+        }
+
+        System.out.println();
+        for (int i = 0; i < names.length; i++) {
+            System.out.print(names[i] + " ");
+        }
+
+
+
+    }
+}
+
+
