@@ -8,20 +8,21 @@ public class Question_09 {
         System.out.print("N = ");
         int user_input = sc.nextInt();
         int[] arr = new int[user_input];
-        
+
+
         for (int i = 0; i < arr.length; i++) {
             System.out.print("Enter a number: ");
             arr[i] = sc.nextInt();
         }
 
-        
+
         System.out.println("Original Array: ");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
 
-        
+
         for (int i = 0; i < arr.length; i++) {
             int current = arr[i];
             int max = arr[i];

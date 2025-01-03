@@ -1,36 +1,14 @@
 public class ass {
-
     
     public static void main(String[] args) {
+        String str = "programming is fun";
 
-        int[] digits = new int[]{8,9,9,8};
- 
-        if(digits[digits.length-1] != 9) {
-            digits[digits.length-1] += 1;
+        String copy = new String(str);
+        int length = 0;
+        while (true) {
+            copy
         }
 
-        int current = 0;
-        int carry = 0;
-        for (int i = digits.length-1; i >= 0; i--) {
-            if (i == digits.length-1) {
-                current = digits[i]+1;
-            } else {
-                current = digits[i]+carry;
-            }
-            if (current > 9) {
-                digits[i] = current%10;
-                carry = current/10;
-            }
-        }
-        if (carry > 0) {
-            int[] modified_array = new int[digits.length+1];
-            for (int i = 0; i < modified_array.length; i++) {
-                if (i == 0) {
-                    modified_array[i] = carry;
-                } else {
-                    modified_array[i] = digits[i-1];
-                }
-            }
-        }
+        System.out.println(str);
     }
 }
