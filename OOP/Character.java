@@ -27,4 +27,10 @@ public class Character {
     int getHealth() {
         return this.health;
     }
+
+    @Override
+    public String toString() {
+        return ("Character [attackPower=" + attackPower + ", health=" + health + ", isAlive=" + isAlive + ", name=" + name
+                + "]");
+    }
 }
