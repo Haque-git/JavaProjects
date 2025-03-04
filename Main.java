@@ -1,48 +1,48 @@
 import java.util.Arrays;
 public class Main {
-    static int[][] matrixSum(int[][] A, int[][] B) {
-        if (A.length != B.length || A[0].length != B[0].length) {
-            return new int[0][0];
+    static double[] normalize(double[] data) {
+        double sum = 0;
+        for (int i = 0; i < data.length; i++) {
+            sum += data[i];
         }
-
-        int[][] result = new int[A.length][A[0].length];
-        for (int i = 0; i < A.length; i++) {
-            for (int j = 0; j < A[0].length; j++) {
-                result[i][j] = A[i][j] + B[i][j];
-            }
+        double[] normalizedData = new double[data.length];
+        for (int i = 0; i < data.length; i++) {
+            normalizedData[i] = data[i] / sum;
         }
-
-        return result;
+        return normalizedData;
     }
 
-    static int[][] matrixProduct(int[][] A, int[][] B) {
-        if (A[0].length != B.length) {
-            return new int[0][0];
+    static double[] makePiChart(double[] data) {
+        double sum = 0;
+        for (int i = 0; i < data.length; i++) {
+            sum += data[i];
         }
-
-        int[][] result = new int[A.length][B[0].length];
-        for (int i = 0; i < A.length; i++) {
-            for (int j = 0; j < B[0].length; j++) {
-                for (int k = 0; k < A[0].length; k++) {
-                    result[i][j] += A[i][k] * B[k][j];
-                }
-            }
+        double[] piChart = new double[data.length];
+        for (int i = 0; i < data.length; i++) {
+            piChart[i] = (data[i] / sum) * 360;
         }
-
-        return result;
+        return piChart;
     }
+
+    static double[] differenceArray(double[] data1 , double[] data2) {
+        if (data1.length != data2.length) {
+            return null;
+        } else {
+            double[] difference = new double[data1.length];
+            for (int i = 0; i < data1.length; i++) {
+                difference[i] = (data1[i] - data2[i])*100;
+            }
+            return difference;
+            
+        }
+    }
+
     public static void main(String[] args) {
-        int[][] A = {{0, 1}, {1, 0}};
-        int[][] B = {{1, 0}, {0, 1}};
-        
-        
-        for (int i = 0; i < A.length; i++) {
-            System.out.println(Arrays.toString(matrixSum(A, B)[i]));
-        }
+        double[] data1 = {56,74,66,72,66,74};
+        double[] data2 = {59,79,69,80,70,78};
+        System.out.println(Arrays.toString(normalize(data2)));
+        System.out.println(Arrays.toString(makePiChart(data2)));
+        System.out.println(Arrays.toString(differenceArray(normalize(data1), normalize(data2))));
 
-
-        for (int i = 0; i < A.length; i++) {
-            System.out.println(Arrays.toString(matrixProduct(A, B)[i]));
-        }
     }
 }

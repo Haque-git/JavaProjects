@@ -1,0 +1,194 @@
+// Task_01
+
+package CSE111.Assignment_02;
+
+public class UniversityTester {
+    public static void main(String[] args) {
+        University uni_01 = new University();
+        University uni_02 = new University();
+        
+
+        System.out.println(uni_01);
+        System.out.println(uni_02);
+        System.out.println(uni_01.name);
+        System.out.println(uni_01.country);
+        System.out.println(uni_02.name);
+        System.out.println(uni_01.country);
+        
+        uni_01.name = "Imperial College London";
+        uni_01.country = "England";
+        
+        uni_02.name = "BRAC University";
+        uni_02.country = "BRAC University";
+        
+        System.out.println(uni_01.name);
+        System.out.println(uni_01.country);
+        System.out.println(uni_02.name);
+        System.out.println(uni_01.country);
+
+    }
+}
+
+
+// Task_02
+
+package CSE111.Assignment_02;
+
+public class Student {
+    public String name = "Default";
+    public int id = 0;
+    
+}
+
+
+// Task_03
+
+package CSE111.Assignment_02;
+
+public class CSECourse {
+    public String courseName = "Programming Language II";
+    public String courseCode = "CSE111";
+    public int credit = 3;
+}
+
+// Task_04
+
+package CSE111.Assignment_02;
+
+public class ImaginaryNumber {
+    public int realPart = 0;
+    public int imaginaryPart = 0;
+
+    public void printNumber() {
+        System.out.println(this.realPart + " + " + this.imaginaryPart + "i");
+    }
+
+}
+
+
+// Task_05
+
+package CSE111.Assignment_02;
+
+public class Course {
+    private String name;
+    private String code;
+    private int credit;
+    
+    public void updateDetails(String name, String code, int credit){
+        this.name = name;
+        this.code = code;
+        this.credit = credit;
+    }
+
+    public void displayCourse(){
+        System.out.println("Course Name: "+name);
+        System.out.println("Course Code: "+code);
+        System.out.println("Course Credit: "+credit);
+    }
+
+}
+
+
+// Task_06
+
+package CSE111.Assignment_01;
+
+public class Assignment {
+    public int tasks;
+    public String difficulty;
+    public boolean submission;
+
+    public void printDetails(){
+        System.out.println("Number of Tasks: "+tasks);
+        System.out.println("Difficulty level: "+difficulty);
+        System.out.println("Submission required: "+submission);
+    }
+
+    public String makeOptional(){
+        if (submission) {
+            submission = false;
+            return "Assignment will not require submission";
+        } else {
+            return "Submission is already not required";
+        }
+    }
+}
+
+
+// Task_07
+
+package CSE111.Assignment_02;
+
+public class CellPhone {
+    private int maxContacts = 3;
+    String model;
+    String[] contacts = new String[maxContacts];
+    int i = 0;
+    
+    public void storeContact(String contact) {
+        if(i<maxContacts){
+            contacts[i] = contact;
+            i++;
+        }else{
+            System.out.println("Memory full. New contact can't be stored.");
+        }
+    }
+    
+    public void printDetails() {
+        System.out.println("Model: "+model);
+        System.out.println("Contacts Stored: " + i);
+        if (i > 0) {
+            System.out.println("Stored Contacts:");
+            for(int j = 0; j<i; j++) {
+                System.out.println(contacts[j]);
+            }
+        }
+    }
+}
+
+
+// Task_08
+
+package CSE111.Assignment_02;
+
+public class Employee {
+    public String name;
+    public double salary = 30000;
+    public String designation = "junior";
+
+    public void newEmployee(String name) {
+        this.name = name;
+    }
+
+    public void displayInfo(){
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee Salary: " + salary);
+        System.out.println("Employee Designation: " + designation);
+    }
+
+    public void calculateTax(){
+        if (salary <= 30000){ 
+            System.out.println("No need to pay tax");
+        } else if (salary > 30000 && salary < 50000) {
+            System.out.println(this.name + " Tax Amount "+ salary*0.1 + " Tk");
+        } else {
+            System.out.println(this.name + " Tax Amount "+ salary*0.3 + " Tk");
+        }
+    }
+
+    public void promoteEmployee(String designation){
+        this.designation = designation;
+        if (designation.equals("senior")){
+            salary += 25000;
+        } else if (designation.equals("lead")){
+            salary += 50000;
+        } else if (designation.equals("manager")){
+            salary += 75000;
+            
+        }
+        System.out.println(this.name + " promoted to " + designation);
+        System.out.println("New Salary: " + salary + " Tk");
+    }
+
+}

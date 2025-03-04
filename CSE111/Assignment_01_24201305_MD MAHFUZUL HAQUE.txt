@@ -1,0 +1,240 @@
+package CSE111.Assignment_01;
+
+import java.util.Scanner;
+
+public class Problem_01 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int sum = 0;
+        int count = 0;
+        double max = Double.NEGATIVE_INFINITY;
+        double min = Double.POSITIVE_INFINITY;
+        
+        
+        for (int i = 0; i < 10; i++) {
+            int n = sc.nextInt();
+
+            if (n>0 && n%2==1) {
+                sum += n;
+                count++;
+                if (n>max) {
+                    max = n;
+                }
+                if (n<min) {
+                    min = n;
+                }
+
+            }
+
+        }
+        
+        
+        if (count == 0) {
+            System.out.println("No odd positive number found");
+        } else {
+            System.out.println("Sum: " + sum);
+            System.out.println("Maximum: " + (int)max);
+            System.out.println("Minimum: " + (int)min);
+            System.out.println("Average: " + ((double)sum/count)); 
+        }
+
+        sc.close();
+    }
+}
+
+
+package CSE111.Assignment_01;
+
+import java.util.Scanner;
+
+public class Problem_02 {
+
+    public static boolean isPrime(int n) {
+        if (n < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n%i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int primeCount(int start, int end) {
+        int count = 0;
+        for (int i = start; i <= end; i++) {
+            if (isPrime(count)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        System.out.printf("There are %d number of prime numbers between %d and %d\n", primeCount(start, end), start, end);
+        sc.close();
+    }
+}
+
+
+package CSE111.Assignment_01;
+
+import java.util.Scanner;
+
+
+public class Problem_03 {
+
+    public static boolean isOneWord(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static String nextWord(Scanner sc) {
+        String str = sc.nextLine();
+        while (true) {
+            if (isOneWord(str)) {
+                break;
+            }
+            System.out.println("Please enter exatcly one word");
+            str = sc.nextLine();
+        }
+        return str;
+    }
+
+    public static int generateNumberFromWord(String str) {
+        int num = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
+                num += (int)str.charAt(i);
+            } else if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z') {
+                num += (int)str.charAt(i);
+            }
+        }
+        return num;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter a single word");
+        String str1 = nextWord(sc);
+        System.out.println("Please enter another single word");
+        String str2 = nextWord(sc);
+
+
+        String str3 = str1 + str2;
+        System.out.println(str3);
+        System.out.println(generateNumberFromWord(str3));
+
+        sc.close();
+    }
+}
+
+
+package CSE111.Assignment_01;
+
+import java.util.Scanner;
+
+public class Problem_04 {
+
+    public static boolean inSmallCaseWord(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) < 'a' || str.charAt(i) > 'z') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isOneWord(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static String nextWordSmalledCase(Scanner sc) {
+        String str = sc.nextLine();
+        while (true) {
+            if (isOneWord(str) && inSmallCaseWord(str)) {
+                break;
+            }
+            System.out.println("Please enter exatcly one word and in small case");
+            str = sc.nextLine();
+        }
+        return str;
+    }
+
+    public static String rotateWord(String str) {
+        String rotated = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'a') {
+                rotated += 'z';
+            } else {
+                rotated += (char)(str.charAt(i) - 1);
+            }
+        }
+        return rotated;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter a single word in small case");
+        String str1 = nextWordSmalledCase(sc);
+        System.out.println(rotateWord(str1));
+        sc.close();
+        
+    }
+}
+
+
+package CSE111.Assignment_01;
+
+import java.util.Scanner;
+
+public class Problem_05 {
+
+    public static int[] createArray(int len, Scanner sc) {
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = sc.nextInt();
+        }
+        return arr;
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the number of length");
+        int len = sc.nextInt();
+        int[] arr = createArray(len, sc);
+        
+        for (int i = 0; i < arr.length/2; i++) {
+            arr[i] = arr[i]^arr[arr.length-i-1];
+            arr[arr.length-i-1] = arr[i]^arr[arr.length-i-1];
+            arr[i] = arr[i]^arr[arr.length-i-1];
+        }
+
+        printArray(arr);
+        sc.close();
+    }
+}
+
+

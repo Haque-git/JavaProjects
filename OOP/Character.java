@@ -2,9 +2,9 @@ package OOP;
 
 public class Character {
     final String name;
-    private int health;
+    int health;
     int attackPower;
-    private boolean isAlive;
+    boolean isAlive;
     Character(int health, String name, int attackPower) {
         this.health = health;
         this.name = name;
@@ -24,9 +24,6 @@ public class Character {
         
     }
 
-    int getHealth() {
-        return this.health;
-    }
 
     @Override
     public String toString() {

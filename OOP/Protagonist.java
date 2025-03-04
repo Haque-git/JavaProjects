@@ -6,5 +6,7 @@ public class Protagonist extends Character {
         super(health, name, attackPower);
         this.aura = aura;
     }
+
+
     
 }
