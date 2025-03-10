@@ -25,7 +25,6 @@ public class Student {
     }
 
     public void showDetails() {
-        calculateScholarshipEligibility();
         System.out.println("Name: " + this.name + "\nDepartment: " + this.department + "\nCGPA: " + this.cgpa + "\nCredits: " + this.credits + "\nScholarship Status: " + this.scholarship_status);
     }
 
@@ -36,7 +35,9 @@ public class Student {
             } else {
                 scholarship_status = "Need-based scholarship";
             }
+            return;
         }
+        scholarship_status = "No scholarship";
     }
 
     public void checkScholarshipEligibility() {
