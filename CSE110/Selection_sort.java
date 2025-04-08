@@ -15,6 +15,5 @@ public class Selection_sort {
             arr[i] = arr[index];
             arr[index] = temp;
         }
-        
     }
 }
