@@ -1,3 +1,5 @@
+// task: 6.2
+
 package CSE111.Assignment_06;
 
 public class Passenger {
