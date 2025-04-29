@@ -15,7 +15,6 @@ public class Player {
         if (total >= MAX_PLAYERS) {
             throw new IllegalStateException("Cannot add more players. Maximum limit reached.");
         }
-
         
         this.name = name;
         this.country = country;
