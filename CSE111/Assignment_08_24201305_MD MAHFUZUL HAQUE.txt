@@ -1,0 +1,200 @@
+// task: 01
+
+package CSE111.Assignment_08;
+
+public class BBAStudent extends Student {
+
+    private void updateDep() {
+        super.setDepartment("BBA");
+    }
+    
+    public BBAStudent() {
+        super.setName("Default");
+        this.updateDep();
+    }
+    
+    public BBAStudent(String name) {
+        super.setName(name);
+        this.updateDep();
+    }
+}
+
+
+// task: 02
+
+package CSE111.Assignment_08;
+
+public class CheckingAccount extends Account {
+
+    public static int count = 0;
+
+    public CheckingAccount() {
+        super(0.0);
+        CheckingAccount.count++;
+    }
+    
+    public CheckingAccount(double balance) {
+        super(balance);
+        CheckingAccount.count++;
+    }
+}
+
+
+//task: 03
+
+package CSE111.Assignment_08;
+
+public class Dog extends Animal {
+    
+    private String breed;
+    
+    public Dog(String name, int age, String color, String breed) {
+        super(name, age, color);
+        this.breed = breed;
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.printf("%s color %s is barking\n", super.color, super.name);
+    }
+
+    @Override
+    public String info() {
+        return super.info() + "Breed: " + this.breed;
+    }
+}
+
+package CSE111.Assignment_08;
+
+public class Cat extends Animal {
+    
+    private String breed;
+    
+    public Cat(String name, int age, String color, String breed) {
+        super(name, age, color);
+        this.breed = breed;
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.printf("%s color %s is meowing\n", super.color, super.name);
+    }
+
+    @Override
+    public String info() {
+        return super.info() + "Breed: " + this.breed;
+    }
+}
+
+
+// task: 04
+
+package CSE111.Assignment_08;
+
+public class Vehicle2010 extends Vehicle {
+    
+    public void moveLowerLeft() {
+        super.moveDown();
+        super.moveLeft();
+    }
+
+    public void moveLowerRight() {
+        super.moveDown();
+        super.moveRight();
+    }
+
+    public void moveUpperRight() {
+        super.moveUp();
+        super.moveRight();
+    }
+
+    public void moveUpperLeft() {
+        super.moveUp();
+        super.moveLeft();
+    }
+}
+
+
+// task: 05
+
+package CSE111.Assignment_08;
+
+public class ComplexNumbertester {
+    public static void main(String[] args) {
+        ComplexNumber cn1 = new ComplexNumber();
+        System.out.println(cn1);
+        System.out.println("----------------");
+        ComplexNumber cn2 = new ComplexNumber(5.0, 7.0);
+        System.out.println(cn2);
+    }
+
+}
+
+
+// task: 06
+
+package CSE111.Assignment_08;
+
+public class Manager extends Employee {
+    
+    private double bonus;
+    
+    public Manager(String name, double baseSalary, int hoursWorked, double bonus) {
+        super(name, baseSalary, hoursWorked);
+        this.bonus = bonus;
+    }
+
+    public void requestIncrement(int amount) {
+        if (super.getHoursWorked() >= 100) {
+            super.setBaseSalary(super.getBaseSalary() + amount);
+            System.out.println(amount + "$ increment is approved.");
+            return;
+        }
+        if (super.getHoursWorked() >= 80) {
+            super.setBaseSalary(super.getBaseSalary() + (amount/2));
+            System.out.println(amount/2 + "$ increment is approved.");
+            return;
+        }
+        System.out.println("Increment denied.");
+    }
+
+    public double calculateSalary() {
+        return super.getBaseSalary() + super.getBaseSalary()*(this.bonus/100.0);
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Bonus " + this.bonus + "%");
+        System.out.println("Final Salary: $" + this.calculateSalary());
+    }
+
+
+
+}
+
+
+package CSE111.Assignment_08;
+
+public class Developer extends Employee {
+
+    private double bonus = 700;
+    
+    private String languageUses;
+
+    public Developer(String name, double baseSalary, int hoursWorked, String languageUses) {
+        super(name, baseSalary, hoursWorked);
+        this.languageUses = languageUses;
+    }
+
+    public double calculateSalary() {
+        return this.languageUses.equalsIgnoreCase("Java") ? super.getBaseSalary() + this.bonus : super.getBaseSalary();
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Language: " + this.languageUses);
+        System.out.println("Final Salary: $" + this.calculateSalary());
+    }
+}
